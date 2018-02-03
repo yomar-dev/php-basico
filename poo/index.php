@@ -1,51 +1,6 @@
 <?php 
 
-class Vehiculo{
-	
-	private $propietario;
-	private $color;	
 
-	public function __construct($color){
-		$this->color = $color;
-	}
-
-	public function mover(){
-		echo "Vehiculo en movimiento<br>";
-	}
-
-	public function getPropietario(){
-		return $this->propietario;
-	}
-
-	public function setPropietario($nombre){
-		$this->propietario = $nombre;
-	}
-
-	public function getColor(){
-		return $this->color;
-	}
-}
-
-
-class Carro extends Vehiculo{
-	public function mover(){
-		echo "Carro en movimiento<br>";
-	}
-}
-
-class Camion extends Vehiculo{
-	private $numLlantas;
-
-	public function __construct($color, $numLlantas){
-		$this->numLlantas = $numLlantas;
-		parent::__construct($color);
-	}
-
-	public function mover(){
-		echo "Camion en movimiento<br>";
-		echo "<strong>Num. Llantas: </strong>" . $this->numLlantas . "<br>";
-	}
-}
 
 
 echo "<h3>Clase Carro</h3>";
