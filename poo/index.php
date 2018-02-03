@@ -2,7 +2,7 @@
 
 class Carro{
 	
-	public $propietario;
+	private $propietario;
 
 	public function mover(){
 		echo "Carro en movimiento<br>";
