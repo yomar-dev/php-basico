@@ -14,5 +14,7 @@ echo "<h3>Clase Carro</h3>";
 
 $miCarro = new Carro();
 $miCarro->mover();
+$miCarro->propietario = "Roxanne";
+echo "<strong>Propietario:</strong>" . $miCarro->propietario;
 
 ?>
