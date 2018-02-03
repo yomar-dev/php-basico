@@ -34,8 +34,16 @@ class Carro extends Vehiculo{
 }
 
 class Camion extends Vehiculo{
+	private $numLlantas;
+
+	public function __construct($color, $numLlantas){
+		$this->numLlantas = $numLlantas;
+		parent::__construct($color);
+	}
+
 	public function mover(){
 		echo "Camion en movimiento<br>";
+		echo "<strong>Num. Llantas: </strong>" . $this->numLlantas . "<br>";
 	}
 }
 
@@ -51,7 +59,7 @@ echo "<br><strong>Color: </strong>" . $miCarro->getColor();
 
 echo "<h3>Clase Camion</h3>";
 
-$miCamion = new Camion("Blanco");
+$miCamion = new Camion("Blanco", 16);
 $miCamion->mover();
 $miCamion->setPropietario("Miguelina");
 echo "<strong>Propietario: </strong>" . $miCamion->getPropietario();
