@@ -10,5 +10,8 @@ class Carro{
 }
 
 
+echo "<h3>Clase Carro</h3>";
+
+$miCarro = new Carro();
 
 ?>
