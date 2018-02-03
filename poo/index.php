@@ -34,7 +34,9 @@ class Carro extends Vehiculo{
 }
 
 class Camion extends Vehiculo{
-
+	public function mover(){
+		echo "Camion en movimiento<br>";
+	}
 }
 
 
