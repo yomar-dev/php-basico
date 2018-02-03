@@ -1,6 +1,6 @@
 <?php 
 
-class Carro{
+class Vehiculo{
 	
 	private $propietario;
 	private $color;	
@@ -10,7 +10,7 @@ class Carro{
 	}
 
 	public function mover(){
-		echo "Carro en movimiento<br>";
+		echo "Vehiculo en movimiento<br>";
 	}
 
 	public function getPropietario(){
@@ -27,6 +27,17 @@ class Carro{
 }
 
 
+class Carro extends Vehiculo{
+	public function mover(){
+		echo "Carro en movimiento<br>";
+	}
+}
+
+class Camion extends Vehiculo{
+
+}
+
+
 echo "<h3>Clase Carro</h3>";
 
 $miCarro = new Carro("Negro");
@@ -35,4 +46,12 @@ $miCarro->setPropietario("Cody");
 echo "<strong>Propietario: </strong>" . $miCarro->getPropietario();
 echo "<br><strong>Color: </strong>" . $miCarro->getColor();
 
+
+echo "<h3>Clase Camion</h3>";
+
+$miCamion = new Camion("Blanco");
+$miCamion->mover();
+$miCamion->setPropietario("Miguelina");
+echo "<strong>Propietario: </strong>" . $miCamion->getPropietario();
+echo "<br><strong>Color: </strong>" . $miCamion->getColor();
 ?>
