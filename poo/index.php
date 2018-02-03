@@ -1,7 +1,10 @@
 <?php 
 
+include 'vehiculo/Carro.php';
+include 'vehiculo/Camion.php';
 
-
+use Vehiculo\Carro;
+use Vehiculo\Camion;
 
 echo "<h3>Clase Carro</h3>";
 
