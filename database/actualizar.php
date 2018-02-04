@@ -2,17 +2,33 @@
 
 require_once'config.php';
 
-$id = $_GET['id'];
-$sql = "SELECT * FROM users WHERE id=:id";
-$query = $pdo->prepare($sql);
-$query->execute([
-	'id' => $id
-]);
+if(!empty($_POST)){
+	$id = $_POST['id'];
+	$nuevo_nombre = $_POST["name"];
+	$nuevo_email = $_POST["email"];
 
-$row = $query->fetch(PDO::FETCH_ASSOC);
-$nombre = $row["name"];
-$email = $row["email"];
+	$sql = "UPDATE users SET name=:nombre, email=:email WHERE  id=:id";
+	$query = $pdo->prepare($sql);
+	$query->execute([
+		'id' => $id,
+		'nombre' => $nuevo_nombre,
+		'email' => $nuevo_email
+	]);
 
+	$nombre = $nuevo_nombre;
+	$email = $nuevo_email;	
+}else{
+	$id = $_GET['id'];
+	$sql = "SELECT * FROM users WHERE id=:id";
+	$query = $pdo->prepare($sql);
+	$query->execute([
+		'id' => $id
+	]);
+
+	$row = $query->fetch(PDO::FETCH_ASSOC);
+	$nombre = $row["name"];
+	$email = $row["email"];	
+}
 
 ?>
 
@@ -36,6 +52,8 @@ $email = $row["email"];
 
 			<label for="email">Email</label> <br>
 			<input name="email" type="email" id="email" value="<?= $email; ?>" required> <br><br>
+
+			<input type="hidden" name="id" value="<?= $id; ?>">
 
 			<input type="submit" value="Actualizar">
 		</form>
