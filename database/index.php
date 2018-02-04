@@ -1,3 +1,21 @@
+<?php 
+
+/**
+ * Parametro 1: Tipo de DB al que nos queremos conectar, su ubicación y el nombre de la DB.
+ * - Tipo de DB: mysql
+ * - Ubicación: localhost
+ * - Nombre DB: cursophp
+ *
+ * Parametro 2: Nombre de usuario de la DB (root)
+ *
+ * Parametro 3: Password (root)
+ * @var PDO
+ */
+$pdo = new PDO("mysql:host=localhost;dbname=cursophp", "root", "root");
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
