@@ -11,8 +11,13 @@
  * Parametro 3: Password (root)
  * @var PDO
  */
-$pdo = new PDO("mysql:host=localhost;dbname=cursophp", "root", "root");
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+try{
+	$pdo = new PDO("mysql:host=localhost;dbname=cursophp", "root", "root");
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}catch(Exception $e){
+	echo $e->getMessage();
+}
 
 ?>
 
