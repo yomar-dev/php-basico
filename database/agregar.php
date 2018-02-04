@@ -11,6 +11,19 @@
 	<div class="container">
 		<h1>Agregar Usuario</h1>
 		<a href="index.php">Inicio</a>
+
+		<form action="agregar.php" method="post" accept-charset="utf-8">
+			<label for="text">Nombre</label> <br>
+			<input name="name" type="text" id="text"> <br><br>
+
+			<label for="email">Email</label> <br>
+			<input name="email" type="email" id="email"> <br><br>
+
+			<label for="password">Contraseña</label> <br>
+			<input name="password" type="password" id="password"> <br><br>
+
+			<input type="submit" value="Agregar">
+		</form>
 	</div>
 </body>
 </html>
