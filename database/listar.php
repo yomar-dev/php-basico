@@ -1,3 +1,16 @@
+<?php 
+
+require_once 'config.php';
+
+$queryResult = $pdo->query("SELECT * FROM users");
+foreach ($queryResult as $row) {
+	echo "<pre>";
+	print_r($row);
+	echo "</pre>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
