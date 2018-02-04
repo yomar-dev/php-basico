@@ -1,6 +1,7 @@
 <?php 
 
 require_once'config.php';
+$result = false;
 
 if(!empty($_POST)){
 	$name = $_POST["name"];
@@ -32,6 +33,10 @@ if(!empty($_POST)){
 	<div class="container">
 		<h1>Agregar Usuario</h1>
 		<a href="index.php">Inicio</a>
+
+		<?php if($result): ?>
+			<div class="alert alert-success">Usario Agregado</div>
+		<?php endif; ?>
 
 		<form action="agregar.php" method="post" accept-charset="utf-8">
 			<label for="text">Nombre</label> <br>
