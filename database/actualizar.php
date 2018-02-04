@@ -1,6 +1,7 @@
 <?php 
 
 require_once'config.php';
+$result = false;
 
 if(!empty($_POST)){
 	$id = $_POST['id'];
@@ -9,7 +10,7 @@ if(!empty($_POST)){
 
 	$sql = "UPDATE users SET name=:nombre, email=:email WHERE  id=:id";
 	$query = $pdo->prepare($sql);
-	$query->execute([
+	$result = $query->execute([
 		'id' => $id,
 		'nombre' => $nuevo_nombre,
 		'email' => $nuevo_email
@@ -45,6 +46,10 @@ if(!empty($_POST)){
 	<div class="container">
 		<h1>Actualizar Usuario</h1>
 		<a href="listar.php">Atras</a>
+
+		<?php if($result): ?>
+			<div class="alert alert-success">Datos Actualizados</div>
+		<?php endif; ?>
 
 		<form action="actualizar.php" method="post" accept-charset="utf-8">
 			<label for="text">Nombre</label> <br>
