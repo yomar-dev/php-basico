@@ -1,3 +1,13 @@
+<?php 
+
+if(!empty($_POST)){
+	$name = $_POST["name"];
+	$email = $_POST["email"];
+	$password = $_POST["password"];
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
