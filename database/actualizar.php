@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<h1>Actualizar Usuario</h1>
-		<a href="index.php">Inicio</a>
+		<a href="listar.php">Atras</a>
 
 		<form action="actualizar.php" method="post" accept-charset="utf-8">
 			<label for="text">Nombre</label> <br>

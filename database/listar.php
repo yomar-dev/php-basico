@@ -23,7 +23,7 @@ $queryResult = $pdo->query("SELECT * FROM users");
 			<tr>
 				<th>Nombre</th>
 				<th>Email</th>
-				<th>Password</th>
+				<th>Editar</th>
 			</tr>
 
 			<?php foreach ($queryResult as $row): ?>
@@ -31,7 +31,7 @@ $queryResult = $pdo->query("SELECT * FROM users");
 			<tr>
 				<td><?= $row["name"]; ?></td>
 				<td><?= $row["email"]; ?></td>
-				<td><?= $row["password"]; ?></td>
+				<td><a href="actualizar.php?id=<?= $row['id']; ?>">Editar</a></td>
 			</tr>
 
 			<?php endforeach; ?>
