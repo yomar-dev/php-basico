@@ -1,13 +1,7 @@
 <?php 
 
 require_once 'config.php';
-
 $queryResult = $pdo->query("SELECT * FROM users");
-foreach ($queryResult as $row) {
-	echo "<pre>";
-	print_r($row);
-	echo "</pre>";
-}
 
 ?>
 
@@ -29,16 +23,18 @@ foreach ($queryResult as $row) {
 			<tr>
 				<th>Nombre</th>
 				<th>Email</th>
+				<th>Password</th>
 			</tr>
 
+			<?php foreach ($queryResult as $row): ?>
+
 			<tr>
-				<td>Miguel</td>
-				<td>miguel@gmail.com</td>
+				<td><?= $row["name"]; ?></td>
+				<td><?= $row["email"]; ?></td>
+				<td><?= $row["password"]; ?></td>
 			</tr>
-			<tr>
-				<td>Dani</td>
-				<td>dani@gmail.com</td>
-			</tr>
+
+			<?php endforeach; ?>
 		</table>
 	</div>
 </body>
