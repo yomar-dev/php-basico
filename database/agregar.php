@@ -24,13 +24,13 @@ if(!empty($_POST)){
 
 		<form action="agregar.php" method="post" accept-charset="utf-8">
 			<label for="text">Nombre</label> <br>
-			<input name="name" type="text" id="text"> <br><br>
+			<input name="name" type="text" id="text" required> <br><br>
 
 			<label for="email">Email</label> <br>
-			<input name="email" type="email" id="email"> <br><br>
+			<input name="email" type="email" id="email" required> <br><br>
 
 			<label for="password">Contraseña</label> <br>
-			<input name="password" type="password" id="password"> <br><br>
+			<input name="password" type="password" id="password" required> <br><br>
 
 			<input type="submit" value="Agregar">
 		</form>
