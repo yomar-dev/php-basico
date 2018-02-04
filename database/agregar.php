@@ -5,7 +5,7 @@ require_once'config.php';
 if(!empty($_POST)){
 	$name = $_POST["name"];
 	$email = $_POST["email"];
-	$password = $_POST["password"];
+	$password = sha1($_POST["password"]);
 
 	$sql = "INSERT INTO users (name, email, password) VALUES (:name, :email, :password)";
 	$query = $pdo->prepare($sql);
