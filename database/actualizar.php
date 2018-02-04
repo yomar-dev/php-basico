@@ -1,3 +1,21 @@
+<?php 
+
+require_once'config.php';
+
+$id = $_GET['id'];
+$sql = "SELECT * FROM users WHERE id=:id";
+$query = $pdo->prepare($sql);
+$query->execute([
+	'id' => $id
+]);
+
+$row = $query->fetch(PDO::FETCH_ASSOC);
+$nombre = $row["name"];
+$email = $row["email"];
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +32,10 @@
 
 		<form action="actualizar.php" method="post" accept-charset="utf-8">
 			<label for="text">Nombre</label> <br>
-			<input name="name" type="text" id="text" required> <br><br>
+			<input name="name" type="text" id="text" value="<?= $nombre; ?>" required> <br><br>
 
 			<label for="email">Email</label> <br>
-			<input name="email" type="email" id="email" required> <br><br>
+			<input name="email" type="email" id="email" value="<?= $email; ?>" required> <br><br>
 
 			<input type="submit" value="Actualizar">
 		</form>
