@@ -21,6 +21,17 @@
 
 			<input type="submit" value="Login">
 		</form>
+
+		<h3>Query</h3>
+		<div>
+			
+		</div>
+
+
+		<h3>Datos del Usuario</h3>
+		<div>
+			
+		</div>
 	</div>
 </body>
 </html>
