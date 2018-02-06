@@ -1,3 +1,18 @@
+<?php 
+
+$user = null;
+$sql = null;
+
+if(!empty($_POST)){
+	require_once 'config.php';
+
+	$sql = "SELECT * FROM users WHERE email = '" . $_POST['email'] . "' AND password = '" . sha1($_POST['password']) . "'";
+	$queryResult = $pdo->query($sql);
+	$user = $queryResult->fetch(PDO::FETCH_ASSOC);
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,13 +39,13 @@
 
 		<h3>Query</h3>
 		<div>
-			
+			<?php print_r($sql); ?>
 		</div>
 
 
 		<h3>Datos del Usuario</h3>
 		<div>
-			
+			<?php print_r($user); ?>			
 		</div>
 	</div>
 </body>
