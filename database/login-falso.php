@@ -12,7 +12,15 @@
 		<h1>Login Falso</h1>		
 		<a href="index.php">Inicio</a>
 
-		
+		<form action="login-falso.php" method="post">
+			<label for="email">Email</label> <br>
+			<input name="email" type="text" id="email" required> <br><br>
+
+			<label for="password">Contraseña</label> <br>
+			<input name="password" type="password" id="password" required> <br><br>
+
+			<input type="submit" value="Login">
+		</form>
 	</div>
 </body>
 </html>
